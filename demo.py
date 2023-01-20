@@ -12,6 +12,7 @@ from loguru import logger
 
 # Local
 from isodatetime import (
+    VERSION,
     datetime_to_iso_datetime,
     datetime_to_iso_date,
     iso_date_to_datetime,
@@ -124,6 +125,7 @@ LOGURU_EXAMPLES = [
 ]
 # fmt:off
 def main():
+    print(f'Demoing version {VERSION} of isodatetime.py:')
     for case in FUNCTION_EXAMPLES:
         show_heading(case)
         expression = case['expression']

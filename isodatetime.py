@@ -1,5 +1,7 @@
 from datetime import datetime
 
+VERSION = "1.0.0"
+
 LOGURU_FORMAT_ISO = "{time:YYYY-MM-DD}T{time:HH:mm:ss.SSSZZ} | {level:<8} | {message}"
 LOGURU_FORMAT_ISO_UTC = "{time:YYYY-MM-DD!UTC}T{time:HH:mm:ss.SSS!UTC}Z | {level:<8} | {message}"
 
