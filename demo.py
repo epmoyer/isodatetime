@@ -7,6 +7,7 @@ from dateutil import tz
 # Library
 from rich.console import Console
 from rich.theme import Theme
+from loguru import logger
 
 # Local
 from isodatetime import (
@@ -113,6 +114,12 @@ def main():
 
     for case in LOGURU_EXAMPLES:
         show_heading(case)
+        logger.remove()
+        logger.add(
+            'test.log',
+            format=case['format']
+        )
+        logger.info('(example log message)')
 
 def show_heading(case):
     heading = case.get('heading')
