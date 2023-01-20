@@ -14,7 +14,7 @@ TEST_CASES = [
         'expression': "isodatetime.iso_now(microseconds=True)"
     },
     {
-        'expression': "(isodatetime.iso_date_to_datetime('2022-03-04'))"
+        'expression': "isodatetime.iso_date_to_datetime('2022-03-04')"
     },
 ]
 #fmt:on
