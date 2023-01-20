@@ -27,3 +27,6 @@ def iso_date_to_date(iso_date):
 
 def iso_now(tz=None, microseconds=False):
     return datetime_to_iso_datetime(datetime.now(), tz=tz, microseconds=microseconds)
+
+def iso_datetime_filesafe(iso_datetime):
+    return iso_datetime.replace(':', '_').replace('+', 'P')

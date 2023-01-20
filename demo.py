@@ -17,6 +17,7 @@ from isodatetime import (
     iso_date_to_datetime,
     iso_date_to_date,
     iso_now,
+    iso_datetime_filesafe,
     LOGURU_FORMAT_ISO,
     LOGURU_FORMAT_ISO_UTC
 )
@@ -85,6 +86,16 @@ FUNCTION_EXAMPLES = [
     },
     {
         'expression': "iso_now(microseconds=True)",
+    },
+    # -------------------------------
+    # iso_datetime_filesafe()
+    # -------------------------------
+    {
+        'heading': "iso_datetime_filesafe()",
+        'expression': "iso_datetime_filesafe('2023-01-20T10:53:59-08:00')",
+    },
+    {
+        'expression': "iso_datetime_filesafe('2023-01-20T10:53:59+08:00')",
     },
 ]
 # fmt:on
