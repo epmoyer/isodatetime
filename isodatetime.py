@@ -1,5 +1,8 @@
 from datetime import datetime
 
+LOGURU_FORMAT_ISO = "{time:YYYY-MM-DD}T{time:HH:mm:ss.SSSZZ} | {level:<8} | {message}"
+LOGURU_FORMAT_ISO_UTC = "{time:YYYY-MM-DD!UTC}T{time:HH:mm:ss.SSS!UTC}Z | {level:<8} | {message}"
+
 def datetime_to_iso_datetime(datetime_object, tz=None, microseconds=False):
     """Convert datetime.datetime object to ISO datetime of form YYYY-MM-DDTHH:MM:SS[+/-}FF:FF.
 

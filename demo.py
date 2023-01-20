@@ -15,6 +15,8 @@ from isodatetime import (
     iso_date_to_datetime,
     iso_date_to_date,
     iso_now,
+    LOGURU_FORMAT_ISO,
+    LOGURU_FORMAT_ISO_UTC
 )
 # --------------------
 # Rich output console
@@ -34,7 +36,7 @@ pprint = CONSOLE_PPRINT.print
 
 
 # fmt:off
-TEST_CASES = [
+FUNCTION_EXAMPLES = [
     # -------------------------------
     # datetime_to_iso_datetime()
     # -------------------------------
@@ -82,35 +84,41 @@ TEST_CASES = [
     {
         'expression': "iso_now(microseconds=True)",
     },
-    # -------------------------------
-    # iso_date_to_datetime()
-    # -------------------------------
-    {
-        'heading': "iso_date_to_datetime()",
-        'expression': "iso_date_to_datetime('2022-03-04')"
-    },
 ]
 # fmt:on
 
-
+# fmt:off
+LOGURU_EXAMPLES = [
+    {
+        'heading': 'LOGURU_FORMAT_ISO',
+        'format': LOGURU_FORMAT_ISO
+    },
+    {
+        'heading': 'LOGURU_FORMAT_ISO_UTC',
+        'format': LOGURU_FORMAT_ISO_UTC
+    }
+]
+# fmt:off
 def main():
-    for i, case in enumerate(TEST_CASES):
-        heading = case.get('heading')
-        if heading:
-            if i != 0:
-                print()
-            print(f'{heading}')
+    for case in FUNCTION_EXAMPLES:
+        show_heading(case)
         expression = case['expression']
         print(f'   [expression]{expression}[/expression]')
         result = eval(expression)
         if isinstance(result, str):
             result = f'[text]{result}[/text]'
-            # print(f'      [text]{result}[/text]')
         else:
             result = f'[object]{result.__repr__()}[/object]'
-            # pprint(result)
-            # result = result.__repr__()
         print(f'      {result}')
+
+    for case in LOGURU_EXAMPLES:
+        show_heading(case)
+
+def show_heading(case):
+    heading = case.get('heading')
+    if heading:
+        print('-' * 80)
+        print(f'{heading}')
 
 
 if __name__ == "__main__":
