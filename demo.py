@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Standard Library
-import isodatetime
+from isodatetime import *
 from dateutil import tz
 
 # Library
@@ -27,19 +27,29 @@ pprint = CONSOLE_PPRINT.print
 
 #fmt:off
 TEST_CASES = [
+    # {
+    #     'heading': "datetime_to_iso_datetime()",
+    #     'expression': "isodatetime.datetime_to_iso_datetime.",
+    # },
+    # {
+    #     'expression': "isodatetime.iso_now(tz=tz.gettz('UTC'))",
+    # },
+    # {
+    #     'expression': "isodatetime.iso_now(microseconds=True)",
+    # },
     {
         'heading': "iso_now()",
-        'expression': "isodatetime.iso_now()",
+        'expression': "iso_now()",
     },
     {
-        'expression': "isodatetime.iso_now(tz=tz.gettz('UTC'))",
+        'expression': "iso_now(tz=tz.gettz('UTC'))",
     },
     {
-        'expression': "isodatetime.iso_now(microseconds=True)",
+        'expression': "iso_now(microseconds=True)",
     },
     {
         'heading': "iso_date_to_datetime()",
-        'expression': "isodatetime.iso_date_to_datetime('2022-03-04')"
+        'expression': "iso_date_to_datetime('2022-03-04')"
     },
 ]
 #fmt:on
