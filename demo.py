@@ -3,6 +3,7 @@
 # Standard Library
 import datetime
 from dateutil import tz
+import sys
 
 # Library
 from rich.console import Console
@@ -91,11 +92,11 @@ FUNCTION_EXAMPLES = [
 # fmt:off
 LOGURU_EXAMPLES = [
     {
-        'heading': 'LOGURU_FORMAT_ISO',
+        'heading': 'loguru logging with format: LOGURU_FORMAT_ISO',
         'format': LOGURU_FORMAT_ISO
     },
     {
-        'heading': 'LOGURU_FORMAT_ISO_UTC',
+        'heading': 'loguru logging with format: LOGURU_FORMAT_ISO_UTC',
         'format': LOGURU_FORMAT_ISO_UTC
     }
 ]
@@ -116,7 +117,7 @@ def main():
         show_heading(case)
         logger.remove()
         logger.add(
-            'test.log',
+            sys.stdout,
             format=case['format']
         )
         logger.info('(example log message)')
