@@ -132,7 +132,7 @@ def main():
         print(f'   [expression]{expression}[/expression]')
         result = eval(expression)
         if isinstance(result, str):
-            result = f'[text]{result}[/text]'
+            result = f'[text]"{result}"[/text]'
         else:
             result = f'[object]{result.__repr__()}[/object]'
         print(f'      {result}')
