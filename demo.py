@@ -16,7 +16,8 @@ from isodatetime import (
     datetime_to_iso_date,
     iso_date_to_datetime,
     iso_date_to_date,
-    iso_now,
+    iso_datetime_now,
+    iso_date_now,
     iso_datetime_to_filesafe,
     LOGURU_FORMAT_ISO,
     LOGURU_FORMAT_ISO_UTC
@@ -75,17 +76,27 @@ FUNCTION_EXAMPLES = [
         'expression': "iso_date_to_date('2022-05-06')",
     },
     # -------------------------------
-    # iso_now()
+    # iso_datetime_now()
     # -------------------------------
     {
-        'heading': "iso_now()",
-        'expression': "iso_now()",
+        'heading': "iso_datetime_now()",
+        'expression': "iso_datetime_now()",
     },
     {
-        'expression': "iso_now(tz=tz.gettz('UTC'))",
+        'expression': "iso_datetime_now(tz=tz.gettz('UTC'))",
     },
     {
-        'expression': "iso_now(microseconds=True)",
+        'expression': "iso_datetime_now(microseconds=True)",
+    },
+    # -------------------------------
+    # iso_date_now()
+    # -------------------------------
+    {
+        'heading': "iso_date_now()",
+        'expression': "iso_date_now()",
+    },
+    {
+        'expression': "iso_date_now(tz=tz.gettz('Asia/Tokyo'))",
     },
     # -------------------------------
     # iso_datetime_to_filesafe()
